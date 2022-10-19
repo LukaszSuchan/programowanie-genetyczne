@@ -6,6 +6,7 @@ import org.apache.poi.ss.util.CellRangeAddress;
 import org.apache.poi.util.Units;
 import org.apache.poi.xddf.usermodel.chart.*;
 import org.apache.poi.xssf.usermodel.*;
+import org.example.contract.MathOneParamFunction;
 
 import java.io.FileOutputStream;
 import java.io.IOException;

@@ -4,8 +4,8 @@ public record DataCreatorRequestDto(
         int numberOfConst,
         int constStartRange,
         int constEndRange,
-        int rangeStart,
-        int rangeEnd,
+        double rangeStart,
+        double rangeEnd,
         double step,
         String fileName
 

@@ -199,11 +199,11 @@ public class TinyGpExtended {
                 break;
             case SIN: System.out.print("(");
                 a1=print_indiv( buffer, ++buffercounter );
-                System.out.print( " sin ");
+                System.out.print( " sin( ");
                 break;
             case COS: System.out.print("(");
                 a1=print_indiv( buffer, ++buffercounter );
-                System.out.print( " cos ");
+                System.out.print( " cos( ");
                 break;
         }
         a2=print_indiv( buffer, a1 );
@@ -403,19 +403,19 @@ public class TinyGpExtended {
         System.exit( 1 );
     }
 
-    public static void main(String[] args) {
-        String fname = "problem.dat";
-        long s = -1;
-
-        if ( args.length == 2 ) {
-            s = Integer.valueOf(args[0]).intValue();
-            fname = args[1];
-        }
-        if ( args.length == 1 ) {
-            fname = args[0];
-        }
-
-        TinyGpExtended gp = new TinyGpExtended(fname, s);
-        gp.evolve();
-    }
+//    public static void main(String[] args) {
+//        String fname = "problem.dat";
+//        long s = -1;
+//
+//        if ( args.length == 2 ) {
+//            s = Integer.valueOf(args[0]).intValue();
+//            fname = args[1];
+//        }
+//        if ( args.length == 1 ) {
+//            fname = args[0];
+//        }
+//
+//        TinyGpExtended gp = new TinyGpExtended(fname, s);
+//        gp.evolve();
+//    }
 };

@@ -1,23 +1,29 @@
 package org.example;
 
+import org.example.contract.MathOneParamFunction;
 import org.example.model.DataCreatorRequestDto;
 
-import static java.lang.Math.pow;
+import static java.lang.Math.*;
+import static java.lang.Math.log;
 
-public class FunctionOne implements MathOneParamFunction{
+public class FunctionOne implements MathOneParamFunction {
 
-    private final DataCreatorRequestDto request = new DataCreatorRequestDto(
-            100,
-            -100,
-            100,
-            -1000,
-            1000,
-            10,
-            "function1.dat"
-    );
+    private final DataCreatorRequestDto request;
+    private final int function;
+
+    public FunctionOne(DataCreatorRequestDto request, int functionNumber) {
+        this.request = request;
+        this.function = functionNumber;
+    }
+
     @Override
     public double call(double x) {
-        return function1(x);
+        return switch (function) {
+            case 1 -> function1(x);
+            case 2 -> function2(x);
+            case 3 -> function3(x);
+            default -> x;
+        };
     }
 
     @Override
@@ -25,7 +31,13 @@ public class FunctionOne implements MathOneParamFunction{
         return request;
     }
 
-    private double function1(double x){
+    public double function1(double x){
         return (5*pow(x, 3) - 2* pow(x, 2) + 3*x - 17);
+    }
+    public double function2(double x){
+        return (sin(x) + cos(x));
+    }
+    public double function3(double x){
+        return (2 * log(x));
     }
 }
