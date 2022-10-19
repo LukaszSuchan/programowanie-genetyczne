@@ -60,8 +60,8 @@ public class TinyGpExtended {
                 else
                     return( num / den );
             }
-            case SIN: return (Math.sin(Math.toRadians(run())));
-            case COS: return (Math.cos(Math.toRadians(run())));
+            case SIN: return (Math.sin(run()));
+            case COS: return (Math.cos(run()));
         }
         return( 0.0 ); // should never get here
     }
@@ -180,6 +180,20 @@ public class TinyGpExtended {
                 System.out.print( x[buffer[buffercounter]]);
             return( ++buffercounter );
         }
+        if(buffer[buffercounter] == 114){
+            System.out.print(" SIN");
+            System.out.print("( ");
+            a2 = print_indiv( buffer, ++buffercounter );
+            System.out.print( ")");
+            return( a2);
+        }
+        if(buffer[buffercounter] == 115){
+            System.out.print(" COS");
+            System.out.print("( ");
+            a2=print_indiv( buffer, ++buffercounter );
+            System.out.print( ")");
+            return( a2);
+        }
         switch(buffer[buffercounter]) {
             case ADD: System.out.print( "(");
                 a1=print_indiv( buffer, ++buffercounter );
@@ -196,14 +210,6 @@ public class TinyGpExtended {
             case DIV: System.out.print( "(");
                 a1=print_indiv( buffer, ++buffercounter );
                 System.out.print( " / ");
-                break;
-            case SIN: System.out.print("(");
-                a1=print_indiv( buffer, ++buffercounter );
-                System.out.print( " sin( ");
-                break;
-            case COS: System.out.print("(");
-                a1=print_indiv( buffer, ++buffercounter );
-                System.out.print( " cos( ");
                 break;
         }
         a2=print_indiv( buffer, a1 );

@@ -21,7 +21,7 @@ public class ExcelConverter {
     public ExcelConverter() {
     }
 
-    public void parseFunctionToExcel(String function, int rangeStart, int rangeEnd, double step, MathOneParamFunction originalFunction) throws IOException {
+    public void parseFunctionToExcel(String function, double rangeStart, double rangeEnd, double step, MathOneParamFunction originalFunction) throws IOException {
 
         XSSFWorkbook workbook = new XSSFWorkbook();
         XSSFSheet spreadsheet = workbook.createSheet("GP plots");
