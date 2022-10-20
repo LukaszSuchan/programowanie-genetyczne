@@ -5,12 +5,12 @@ import org.example.model.DataCreatorRequestDto;
 
 import static java.lang.Math.*;
 
-public class FunctionTwo implements MathTwoParamFunction {
+public class FunctionTwoParam implements MathTwoParamFunction {
 
     private final DataCreatorRequestDto request;
     private final int function;
 
-    public FunctionTwo(DataCreatorRequestDto request, int functionNumber) {
+    public FunctionTwoParam(DataCreatorRequestDto request, int functionNumber) {
         this.request = request;
         this.function = functionNumber;
     }
