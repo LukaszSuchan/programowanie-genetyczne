@@ -1,31 +1,21 @@
 package org.example;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 
 public class TxtFileReader {
 
-    public static String read(String fileName) throws IOException {
-        File file = new File(
-                "programowanie-genetyczne-lab\\src\\main\\resources\\" + fileName);
-
-        // Note:  Double backquote is to avoid compiler
-        // interpret words
-        // like \test as \t (ie. as a escape sequence)
-
-        // Creating an object of BufferedReader class
-        BufferedReader br
-                = new BufferedReader(new FileReader(file));
-
-        // Declaring a string variable
-        StringBuilder txt = new StringBuilder();
-        String st;
-        // Condition holds true till
-        // there is character in a string
-        while ((st = br.readLine()) != null)
-        {
-            txt.append(st);
+    public static String read(String fileName) {
+        BufferedReader reader;
+        try {
+            reader = new BufferedReader(new FileReader(
+                    "src/main/resources/data/" + fileName));
+            String line = reader.readLine();
+            return line;
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-
-        return txt.toString();
+        return " ";
     }
 }

@@ -15,8 +15,9 @@ public class Main
                 100,
                 -100,
                 100,
-                -PI/2,
-                PI/2,
+                -100,
+                100
+                ,
                 0.01,
                 "data/function1.dat"
         );
@@ -25,9 +26,9 @@ public class Main
 //        TinyGpExtended tinyGpExtended = new TinyGpExtended("src/main/resources/" + request.fileName(), -1);
 //        tinyGpExtended.evolve();
 
-        var function = TxtFileReader.read("zad1.txt");
-//        ExcelConverter excelConverter = new ExcelConverter();
-//        excelConverter.parseOneParamFunctionToExcel(function, request, new FunctionOneParam(request, 7));
+        var function = TxtFileReader.read("zad1-1.txt");
+        ExcelConverter excelConverter = new ExcelConverter();
+        excelConverter.parseOneParamFunctionToExcel(function, request, new FunctionOneParam(request, 1));
 
         ResultsOptimizer optimizer = new ResultsOptimizer();
         System.out.println(optimizer.optimize(function));
